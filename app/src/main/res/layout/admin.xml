@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@drawable/gradient1">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_constraintEnd_toEndOf="parent"
+        android:layout_constraintStart_toStartOf="parent"
+        android:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="75dp"
+        android:fontFamily="monospace"
+        android:text="Manage Inventory"
+        android:textColor="#FFFFFF"
+        android:textSize="39sp"
+        android:layout_centerHorizontal="true"/>
+
+    <Button
+        android:id="@+id/imageButton2"
+        android:layout_width="245dp"
+        android:layout_height="50dp"
+        android:layout_constraintTop_toBottomOf="@+id/textView2"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/textView2"
+        android:text="Remove Vehicle"
+        android:layout_centerHorizontal="true"/>
+
+    <Button
+        android:id="@+id/button2"
+        android:text="Add Vehicle"
+        android:layout_width="245dp"
+        android:layout_height="50dp"
+        android:layout_constraintTop_toBottomOf="@+id/imageButton2"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/imageButton2"
+        android:layout_centerHorizontal="true"
+        />
+    <Button
+        android:id="@+id/button3"
+        android:text="Menu"
+        android:layout_width="245dp"
+        android:layout_height="50dp"
+        android:layout_constraintTop_toBottomOf="@+id/button2"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/button2"
+        android:layout_centerHorizontal="true"
+        />
+</RelativeLayout>
