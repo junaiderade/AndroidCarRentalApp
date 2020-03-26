@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/VehicleInformation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_constraintEnd_toEndOf="parent"
+        android:layout_constraintStart_toStartOf="parent"
+        android:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="75dp"
+        android:fontFamily="monospace"
+        android:text="Manage Inventory"
+        android:textColor="@color/colorPrimarDark"
+        android:textSize="39sp"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/CarName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/VehicleInformation"
+        android:layout_marginTop="27dp"
+        android:text="Car Name"
+        android:textColor="@color/colorPrimarDark"
+        android:textSize="30sp" android:paddingLeft="10dp"/>
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_below="@id/CarName"/>
+
+    <TextView
+        android:id="@+id/Mpg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/VehicleInformation"
+        android:layout_marginLeft="108dp"
+        android:layout_marginTop="27dp"
+        android:layout_toRightOf="@+id/CarName"
+        android:text="MPG"
+        android:textColor="@color/colorPrimarDark"
+        android:textSize="30sp" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Mpg"
+        android:layout_marginLeft="39dp"
+        android:layout_marginTop="-1dp"
+        android:layout_toRightOf="@id/editText"
+        android:ems="3"
+        android:inputType="numberSigned"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/cartype"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/VehicleInformation"
+        android:layout_marginLeft="-136dp"
+        android:layout_marginTop="140dp"
+        android:layout_toRightOf="@+id/CarName"
+        android:text="Cartype"
+        android:textColor="@color/colorPrimarDark"
+        android:textSize="30sp" />
+
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="8"
+        android:inputType="textPersonName"
+        android:layout_below="@id/cartype"/>
+
+    <TextView
+        android:id="@+id/price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editText2"
+        android:layout_marginLeft="141dp"
+        android:layout_marginTop="27dp"
+        android:layout_toRightOf="@id/cartype"
+        android:text="Price"
+        android:textColor="@color/colorPrimarDark"
+        android:textSize="30sp" />
+
+    <EditText
+        android:id="@+id/editPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/price"
+        android:layout_marginLeft="87dp"
+        android:layout_marginTop="0dp"
+        android:layout_toRightOf="@id/editText3"
+        android:ems="3"
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editText3"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="35dp"
+        android:text="Add" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="27dp"
+        android:text="Menu" />
+
+
+</RelativeLayout>
