@@ -19,7 +19,6 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
         db= new CarRentalDatabaseHelper(this);
-        Log.w("hello","yuuuuuuuuu");
 
         goToSignUp =(Button) findViewById(R.id.signUp);
         goToSignUp.setOnClickListener(new View.OnClickListener() {

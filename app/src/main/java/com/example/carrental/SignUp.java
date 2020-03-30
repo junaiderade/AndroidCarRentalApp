@@ -36,6 +36,7 @@ public class SignUp extends AppCompatActivity {
                 String pass= password.getText().toString();
                 if(use.length()==0 || pass.length()==0)
                     return;
+                
 
 
                 User customer= new User(use,pass);
