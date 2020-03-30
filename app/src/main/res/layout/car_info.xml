@@ -23,9 +23,11 @@
         android:id="@+id/imageView"
         android:layout_width="68dp"
         android:layout_height="69dp"
-
-        android:layout_alignRight="@id/textCarName"
-        android:layout_marginRight="-118dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="197dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginRight="-121dp"
         app:srcCompat="@drawable/q8" />
 
     <TextView
@@ -55,30 +57,28 @@
         android:id="@+id/textPrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignRight="@id/imageView"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="29dp"
-        android:layout_marginRight="-75dp"
-        android:layout_toLeftOf="@id/imageView"
+        android:layout_marginLeft="272dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginRight="-87dp"
         android:text="$Price"
         android:textColor="@color/colorPrimary"
         android:textSize="@dimen/text_size_medium" />
 
     <Button
         android:id="@+id/buttonReserveCar"
-        android:layout_width="wrap_content"
+        android:layout_width="78dp"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/textCarName"
-        android:layout_alignBottom="@+id/textCarType"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
+        android:layout_marginLeft="329dp"
+        android:layout_marginTop="11dp"
+        android:layout_toRightOf="@id/textPrice"
         android:background="@color/system_transparent"
-        android:focusable="false"
-        android:focusableInTouchMode="false"
         android:text="Reserve"
         android:textColor="@color/colorPrimarDark"
         android:visibility="visible"
         tools:visibility="visible" />
+
 </RelativeLayout>

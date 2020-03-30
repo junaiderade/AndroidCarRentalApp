@@ -36,7 +36,7 @@ public class SignUp extends AppCompatActivity {
                 String pass= password.getText().toString();
                 if(use.length()==0 || pass.length()==0)
                     return;
-                
+
 
 
                 User customer= new User(use,pass);
@@ -51,7 +51,7 @@ public class SignUp extends AppCompatActivity {
                 if(customer.getId()!=-1) {
 
 
-                    Intent menuPage = new Intent(SignUp.this, Menu.class);
+                    Intent menuPage = new Intent(SignUp.this, ViewListings.class);
                     startActivity(menuPage);
                 }
             }

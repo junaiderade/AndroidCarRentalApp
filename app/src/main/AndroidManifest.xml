@@ -13,6 +13,7 @@
         <activity android:name=".Menu"></activity>
         <activity android:name=".SignUp" />
         <activity android:name=".AdminPage"/>
+        <activity android:name=".ViewListings"/>
         <activity android:name=".AddInventory"/>
 
         <activity android:name=".LoginActivity" />

@@ -7,7 +7,7 @@ public class CarRentalDatabaseHelper extends SQLiteOpenHelper{
 
     private static final String DATABASE_USER = "CarRental.db";
 
-    private static final int DATABASE_VERSION = 5;
+    private static final int DATABASE_VERSION = 6;
 
     private static final String CREATE_TABLE_USER =
             "create table user (_id integer primary key autoincrement, "

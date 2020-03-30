@@ -17,6 +17,10 @@ public class Car {
         this.price=price;
 
     }
+    public Car(){
+
+
+    }
 
 
     public int getCarId() {

@@ -2,11 +2,15 @@ package com.example.carrental;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 
 import java.io.ByteArrayOutputStream;
+import java.util.ArrayList;
+import java.util.Calendar;
 
 public class ContactDataSource {
     public SQLiteDatabase database;
@@ -68,6 +72,41 @@ public class ContactDataSource {
 
         }
         return didSucced;
+    }
+    public ArrayList<Car> getCar() {
+
+        ArrayList<Car> cars = new ArrayList<Car>();
+        try {
+            String query = "SELECT * FROM car ";
+            Cursor cursor = database.rawQuery(query, null);
+
+            Car newCar;
+            cursor.moveToFirst();
+
+            while (!cursor.isAfterLast()) {
+                newCar = new Car();
+                newCar.setCarId(cursor.getInt(0));
+                newCar.setCarName(cursor.getString(1));
+                newCar.setMpg(cursor.getInt(2));
+                newCar.setCarType(cursor.getString(3));
+                newCar.setPrice(cursor.getInt(4));
+
+
+                if(cursor.getBlob(5) != null) {
+                    byte[] byteArray = cursor.getBlob(5);
+                    Bitmap bm = BitmapFactory.decodeByteArray(byteArray, 0 ,byteArray.length);
+                    newCar.setPicture(bm);
+
+                }
+                cars.add(newCar);
+                cursor.moveToNext();
+            }
+            cursor.close();
+        }
+        catch (Exception e){
+            cars = new ArrayList<Car>();
+        }
+        return cars;
     }
 }
 
