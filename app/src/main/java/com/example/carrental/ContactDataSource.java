@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteStatement;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.util.Log;
 
 import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
@@ -29,10 +30,23 @@ public class ContactDataSource {
     }
 
     public boolean confirmUser(User user){
-        String sql = "Select count(*) from user where username = '"+user.getUsername()+"'and password='"+user.getPassword()+"'";
+        String sql = "Select count(*) from user where carName = '"+user.getUsername()+"'and password='"+user.getPassword()+"'";
         SQLiteStatement statement = dbHelper.getReadableDatabase().compileStatement(sql);
         long l = statement.simpleQueryForLong();
         statement.close();
+
+        if(l == 1){
+            return true;
+        }
+        return false;
+    }
+
+    public boolean deleteCar(String car){
+        String sql = "Delete from car where username = '"+car;
+        SQLiteStatement statement = dbHelper.getReadableDatabase().compileStatement(sql);
+        long l = statement.simpleQueryForLong();
+        statement.close();
+        Log.w("Hello",""+l);
 
         if(l == 1){
             return true;
