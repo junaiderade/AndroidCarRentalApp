@@ -16,6 +16,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 
 public class ContactDataSource {
+    public static String username = "";
     public static long isAdmin = 1;
     public SQLiteDatabase database;
     public CarRentalDatabaseHelper dbHelper;
@@ -43,6 +44,7 @@ public class ContactDataSource {
             SQLiteStatement statement2 = dbHelper.getReadableDatabase().compileStatement(ut);
             l = statement2.simpleQueryForLong();
             isAdmin = l;
+            username = user.getUsername();
             Log.d("login", "yo +"+ isAdmin);
 
             return true;

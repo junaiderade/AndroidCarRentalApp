@@ -51,7 +51,7 @@ public class SignUp extends AppCompatActivity {
                 if(customer.getId()!=-1) {
 
 
-                    Intent menuPage = new Intent(SignUp.this, ViewListings.class);
+                    Intent menuPage = new Intent(SignUp.this, LoginActivity.class);
                     startActivity(menuPage);
                 }
             }
