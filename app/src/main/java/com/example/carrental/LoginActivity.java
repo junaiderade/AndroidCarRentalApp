@@ -19,14 +19,40 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
         db= new CarRentalDatabaseHelper(this);
+        login();
 
-        goToSignUp =(Button) findViewById(R.id.signUp);
-        goToSignUp.setOnClickListener(new View.OnClickListener() {
+//        goToSignUp =(Button) findViewById(R.id.signUp);
+//////        goToSignUp.setOnClickListener(new View.OnClickListener() {
+//////            @Override
+//////            public void onClick(View v) {
+//////                Intent signUpPage = new Intent(LoginActivity.this, SignUp.class);
+//////                startActivity(signUpPage);
+//////
+//////            }
+//////        });
+    }
+    public void login(){
+        Button user =(Button) findViewById(R.id.button5);
+        user.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent signUpPage = new Intent(LoginActivity.this, SignUp.class);
-                startActivity(signUpPage);
 
+                ContactDataSource ds = new ContactDataSource(LoginActivity.this);
+                EditText username= (EditText)findViewById(R.id.editText9);
+                EditText password= (EditText)findViewById(R.id.editText10);
+                String use= username.getText().toString();
+                String pass= password.getText().toString();
+                if(use.length()==0 || pass.length()==0)
+                    return;
+
+                User customer= new User(use,pass);
+
+                if(ds.confirmUser(customer)==false){
+                    return;
+                }else{
+                    Intent signUpPage = new Intent(LoginActivity.this, SignUp.class);
+                    startActivity(signUpPage);
+                }
             }
         });
     }
