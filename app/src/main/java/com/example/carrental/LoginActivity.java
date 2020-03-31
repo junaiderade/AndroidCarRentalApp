@@ -21,16 +21,17 @@ public class LoginActivity extends AppCompatActivity {
         db= new CarRentalDatabaseHelper(this);
         login();
 
-//        goToSignUp =(Button) findViewById(R.id.signUp);
-//////        goToSignUp.setOnClickListener(new View.OnClickListener() {
-//////            @Override
-//////            public void onClick(View v) {
-//////                Intent signUpPage = new Intent(LoginActivity.this, SignUp.class);
-//////                startActivity(signUpPage);
-//////
-//////            }
-//////        });
+        goToSignUp =(Button) findViewById(R.id.signUp);
+        goToSignUp.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               Intent signUpPage = new Intent(LoginActivity.this, SignUp.class);
+              startActivity(signUpPage);
+
+           }
+        });
     }
+
     public void login(){
         Button user =(Button) findViewById(R.id.button5);
         user.setOnClickListener(new View.OnClickListener() {
@@ -50,8 +51,8 @@ public class LoginActivity extends AppCompatActivity {
                 if(ds.confirmUser(customer)==false){
                     return;
                 }else{
-                    Intent signUpPage = new Intent(LoginActivity.this, SignUp.class);
-                    startActivity(signUpPage);
+                    Intent menuPage = new Intent(LoginActivity.this, ViewListings.class);
+                    startActivity(menuPage);
                 }
             }
         });
