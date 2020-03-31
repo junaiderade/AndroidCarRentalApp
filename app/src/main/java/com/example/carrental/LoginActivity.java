@@ -51,14 +51,12 @@ public class LoginActivity extends AppCompatActivity {
                 if(use.length()==0 || pass.length()==0)
                     return;
 
-                User customer= new User(use,pass);
+                User customer = new User(use,pass);
 
                 if(ds.confirmUser(customer)==false){
                     Toast.makeText(LoginActivity.this, "Invalid Username or Password", Toast.LENGTH_SHORT).show();
-
                     return;
                 }else{
-
                     Intent menuPage = new Intent(LoginActivity.this, Menu.class);
                     startActivity(menuPage);
 
