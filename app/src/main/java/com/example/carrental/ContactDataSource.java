@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteStatement;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 
@@ -25,6 +26,18 @@ public class ContactDataSource {
     }
     public void close() {
         dbHelper.close();
+    }
+
+    public boolean confirmUser(User user){
+        String sql = "Select count(*) from user where username = '"+user.getUsername()+"'and password='"+user.getPassword()+"'";
+        SQLiteStatement statement = dbHelper.getReadableDatabase().compileStatement(sql);
+        long l = statement.simpleQueryForLong();
+        statement.close();
+
+        if(l == 1){
+            return true;
+        }
+        return false;
     }
 
     public boolean insertUser(User user){
