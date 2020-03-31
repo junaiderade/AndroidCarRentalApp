@@ -49,6 +49,7 @@ public class AddInventory extends AppCompatActivity {
                 Integer mpgInt = new Integer(price.getText().toString());
 
 
+
                  car= new Car(carName.getText().toString(),carType.getText().toString(),mpgInt,priceInt);
                 try{
                     ds.open();

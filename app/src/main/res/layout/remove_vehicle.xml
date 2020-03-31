@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/VehicleInformation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="75dp"
+        android:fontFamily="monospace"
+        android:text="Remove Inventory"
+        android:textColor="@color/colorPrimarDark"
+        android:textSize="39sp" />
+
+    <TextView
+        android:id="@+id/CarNameRemove"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/VehicleInformation"
+        android:layout_marginTop="27dp"
+        android:paddingLeft="10dp"
+        android:text="Car Name"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/colorPrimarDark"
+        android:textSize="30sp" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/CarNameRemove"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:hint="Enter Vehicle "
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/removeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="160dp"
+        android:layout_marginTop="264dp"
+        android:text="Remove" />
+
+    <Button
+        android:id="@+id/mainButton4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="152dp"
+        android:layout_marginTop="325dp"
+        android:text="Main Menu" />
+</RelativeLayout>

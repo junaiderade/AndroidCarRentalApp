@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="75dp"
         android:fontFamily="monospace"
-        android:text="Manage Inventory"
+        android:text="Add Inventory"
         android:textColor="@color/colorPrimarDark"
         android:textSize="39sp"
         android:layout_centerHorizontal="true"/>
@@ -98,7 +98,7 @@
         android:layout_marginTop="0dp"
         android:layout_toRightOf="@id/editText3"
         android:ems="3"
-        android:inputType="textPersonName" />
+        android:inputType="numberSigned" />
 
     <TextView
         android:id="@+id/photo"
