@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -36,6 +38,14 @@ public class ViewListings  extends AppCompatActivity {
         catch(Exception e){
             Toast.makeText(this, "Error retrieving contacts", Toast.LENGTH_LONG).show();
         }
+        Button menu = (Button) findViewById(R.id.menuButton);
+        menu.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent =new Intent(ViewListings.this,Menu.class);
+                startActivity(intent);
+
+            }
+        });
 
     }
 }

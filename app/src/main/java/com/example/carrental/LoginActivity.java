@@ -1,6 +1,7 @@
 package com.example.carrental;
 
 import androidx.appcompat.app.AppCompatActivity;
+import android.widget.Toast;
 
 import android.os.Bundle;
 import android.content.*;
@@ -8,6 +9,9 @@ import android.content.*;
 import android.util.Log;
 import android.view.View;
 import android.widget.*;
+
+import com.google.android.material.snackbar.Snackbar;
+
 public class LoginActivity extends AppCompatActivity {
 
     private Button goToSignUp;
@@ -50,10 +54,14 @@ public class LoginActivity extends AppCompatActivity {
                 User customer= new User(use,pass);
 
                 if(ds.confirmUser(customer)==false){
+                    Toast.makeText(LoginActivity.this, "Invalid Username or Password", Toast.LENGTH_SHORT).show();
+
                     return;
                 }else{
-                    Intent menuPage = new Intent(LoginActivity.this, ViewListings.class);
+
+                    Intent menuPage = new Intent(LoginActivity.this, Menu.class);
                     startActivity(menuPage);
+
                 }
             }
         });

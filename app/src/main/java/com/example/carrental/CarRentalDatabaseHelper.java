@@ -39,10 +39,7 @@ public class CarRentalDatabaseHelper extends SQLiteOpenHelper{
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("Drop TABLE IF EXISTS user" );
-        db.execSQL( CREATE_TABLE_USER);
-        db.execSQL( CREATE_TABLE_CAR);
-        db.execSQL( CREATE_TABLE_Reservation);
+
     }
 
 }

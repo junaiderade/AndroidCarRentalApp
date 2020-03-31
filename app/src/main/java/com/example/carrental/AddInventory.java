@@ -29,31 +29,13 @@ public class AddInventory extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_vehicle);
-        menuButton();
         add();
         initImageButton();
 
 
-
-
-
-
-
     }
 
-    public void menuButton(){
-        Button menu = (Button) findViewById(R.id.menuScreen);
-        menu.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-               Intent intent =new Intent(AddInventory.this,Menu.class);
-               startActivity(intent);
 
-            }
-        });
-
-
-
-    }
     public void add(){
         Button add = (Button) findViewById(R.id.addButton);
         add.setOnClickListener(new View.OnClickListener() {
@@ -135,4 +117,5 @@ public class AddInventory extends AppCompatActivity {
             }
         }
     }
+
 }
