@@ -16,6 +16,7 @@
         <activity android:name=".AdminPage"/>
         <activity android:name=".ViewListings"/>
         <activity android:name=".AddInventory"/>
+        <activity android:name=".RemoveInventory"/>
 
         <activity android:name=".LoginActivity" />
         <activity android:name=".MainActivity">

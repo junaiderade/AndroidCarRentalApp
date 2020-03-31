@@ -16,6 +16,7 @@ public class AdminPage extends AppCompatActivity {
         setContentView(R.layout.admin);
         addVehicle();
         menu();
+        remove();
 
     }
     public void addVehicle(){
@@ -33,6 +34,16 @@ public class AdminPage extends AppCompatActivity {
         menu.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent =new Intent(AdminPage.this,Menu.class);
+                startActivity(intent);
+
+            }
+        });
+    }
+    public void remove(){
+        Button menu = (Button) findViewById(R.id.imageButton2);
+        menu.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent =new Intent(AdminPage.this,RemoveInventory.class);
                 startActivity(intent);
 
             }

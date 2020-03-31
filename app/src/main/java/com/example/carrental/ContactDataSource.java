@@ -41,7 +41,7 @@ public class ContactDataSource {
         return false;
     }
 
-    public boolean deleteCar(String car){
+    /*public boolean deleteCar(String car){
         String sql = "Delete from car where username = '"+car;
         SQLiteStatement statement = dbHelper.getReadableDatabase().compileStatement(sql);
         long l = statement.simpleQueryForLong();
@@ -53,7 +53,7 @@ public class ContactDataSource {
         }
         return false;
     }
-
+*/
     public boolean insertUser(User user){
         boolean didSucced = false;
 
