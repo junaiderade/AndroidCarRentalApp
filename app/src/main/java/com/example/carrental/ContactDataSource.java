@@ -10,17 +10,24 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.util.Log;
 
+
+
+
 import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 import java.util.Calendar;
 
 public class ContactDataSource {
+    public static String username = "";
+    public static long isAdmin = 1;
     public SQLiteDatabase database;
     public CarRentalDatabaseHelper dbHelper;
     public ContactDataSource(Context context) {
         dbHelper = new CarRentalDatabaseHelper(context);
     }
-
+    public static long getIsAdmin(){
+        return isAdmin;
+    }
 
     public void open() throws SQLException {
         database = dbHelper.getWritableDatabase();
@@ -33,9 +40,15 @@ public class ContactDataSource {
         String sql = "Select count(*) from user where carName = '"+user.getUsername()+"'and password='"+user.getPassword()+"'";
         SQLiteStatement statement = dbHelper.getReadableDatabase().compileStatement(sql);
         long l = statement.simpleQueryForLong();
-        statement.close();
 
-        if(l == 1){
+        if(l != 0){
+            String ut = "Select usertype from user where username = '"+user.getUsername()+"'and password='"+user.getPassword()+"'";
+            SQLiteStatement statement2 = dbHelper.getReadableDatabase().compileStatement(ut);
+            l = statement2.simpleQueryForLong();
+            isAdmin = l;
+            username = user.getUsername();
+            Log.d("login", "yo +"+ isAdmin);
+
             return true;
         }
         return false;

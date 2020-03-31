@@ -36,7 +36,7 @@ public class ViewListings  extends AppCompatActivity {
             listView.setAdapter(adapter);
         }
         catch(Exception e){
-            Toast.makeText(this, "Error retrieving contacts", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Error retrieving cars", Toast.LENGTH_LONG).show();
         }
         Button menu = (Button) findViewById(R.id.menuButton);
         menu.setOnClickListener(new View.OnClickListener() {

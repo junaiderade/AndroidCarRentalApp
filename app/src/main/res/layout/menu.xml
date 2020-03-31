@@ -50,17 +50,6 @@
         app:layout_constraintTop_toBottomOf="@+id/imageButton3"
         app:srcCompat="@android:drawable/ic_menu_edit" />
 
-    <ImageButton
-        android:id="@+id/imageAdmin"
-        android:layout_width="245dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/q8"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton4"
-        app:srcCompat="@android:drawable/ic_menu_edit"
-        tools:visibility="invisible" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
