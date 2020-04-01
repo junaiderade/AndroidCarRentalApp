@@ -26,6 +26,9 @@ public class ContactDataSource {
     public static long getIsAdmin(){
         return isAdmin;
     }
+    public static String getUsername(){
+        return username;
+    }
 
     public void open() throws SQLException {
         database = dbHelper.getWritableDatabase();
@@ -52,6 +55,26 @@ public class ContactDataSource {
         return false;
     }
 
+    public void insertRes(int id, String user, String car, String date){
+        boolean didSucced = false;
+
+
+        try{
+
+            ContentValues initialValues = new ContentValues();
+            initialValues.put("userId",id);
+            initialValues.put("username",user);
+            initialValues.put("carname",car);
+            initialValues.put("date",date);
+            didSucced=database.insert("reservation", null, initialValues) > 0;
+
+        }catch (Exception e){
+            e.printStackTrace();
+
+        }
+
+    }
+
     public boolean insertUser(User user){
         boolean didSucced = false;
 
@@ -71,6 +94,8 @@ public class ContactDataSource {
         user.setId(0);
         return didSucced;
     }
+
+
     public boolean insertCar(Car car){
         boolean didSucced = false;
 

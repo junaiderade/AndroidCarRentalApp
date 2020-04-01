@@ -1,6 +1,8 @@
 package com.example.carrental;
 
+import android.app.DatePickerDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,6 +26,7 @@ public class ContactAdapter extends ArrayAdapter<Car> {
     }
     public View getView(int position, View convertView, ViewGroup parent) {
         View v = convertView;
+        View v2 = convertView;
         try {
             Car car = items.get(position);
 
@@ -31,13 +34,26 @@ public class ContactAdapter extends ArrayAdapter<Car> {
                 LayoutInflater vi =(LayoutInflater) adapterContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
                 v = vi.inflate(R.layout.car_info, null);
+
             }
-            TextView textCarName = (TextView) v.findViewById(R.id.textCarName);
+            final TextView textCarName = (TextView) v.findViewById(R.id.textCarName);
             TextView textCarMpg=(TextView) v.findViewById(R.id.textAddy) ;
             TextView textCarTpye=(TextView) v.findViewById(R.id.textCarType) ;
             TextView textCarPrice=(TextView) v.findViewById(R.id.textPrice) ;
 
             Button b = (Button) v.findViewById(R.id.buttonReserveCar);
+            b.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+                    ContactDataSource ds = new ContactDataSource(adapterContext);
+                    ds.open();
+                    ds.insertRes(1,ds.getUsername(),textCarName.getText().toString(),"9/9");
+                    ds.close();
+                }
+            });
+
+
+
+
             ImageView photo= (ImageView) v.findViewById(R.id.imageView);
             textCarName.setText(car.getCarName());
             textCarMpg.setText("MPG:"+car.getMpg());
