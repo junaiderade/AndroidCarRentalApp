@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -19,6 +20,7 @@ public class ContactAdapter extends ArrayAdapter<Car> {
         super(context, R.layout.car_info, items);
         adapterContext = context;
         this.items = items;
+
     }
     public View getView(int position, View convertView, ViewGroup parent) {
         View v = convertView;
@@ -58,5 +60,18 @@ public class ContactAdapter extends ArrayAdapter<Car> {
 
         return v;
     }
+   /* public void deleteOption(String name){
+        ContactDataSource db = new ContactDataSource();
+        try {
+            db.open();
+            db.deleteCar(name);
+            db.close();
+        }
+        catch (Exception e) {
+            Toast.makeText(adapterContext, "Delete Car Failed", Toast.LENGTH_LONG).show();
+        }
+        this.notifyDataSetChanged();
+    }*/
+    }
 
-}
+

@@ -35,10 +35,12 @@ public class Menu extends AppCompatActivity {
     public void adminPage(){
         ContactDataSource ds = new ContactDataSource(Menu.this);
         long l = ds.getIsAdmin();
+
+        ImageButton user =(ImageButton) findViewById(R.id.imageButton4);
+
         if(l==0){
-            Log.d("umm","swag?");
+            user.setVisibility(View.GONE);
         }
-        ImageButton user =(ImageButton) findViewById(R.id.imageAdmin);
         user.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

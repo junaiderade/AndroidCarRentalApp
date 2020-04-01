@@ -10,13 +10,15 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class RemoveInventory extends AppCompatActivity {
+    ContactAdapter adapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.remove_vehicle);
 
         menu();
-        //remove();
+        remove();
 
     }
     public void menu(){
@@ -29,7 +31,7 @@ public class RemoveInventory extends AppCompatActivity {
             }
         });
     }
-    /*
+
     public void remove(){
         Button menu = (Button) findViewById(R.id.removeButton);
         menu.setOnClickListener(new View.OnClickListener() {
@@ -37,11 +39,12 @@ public class RemoveInventory extends AppCompatActivity {
                 EditText carname=(EditText)findViewById(R.id.editText);
                 if(carname.getText().toString().length()>0) {
                     ContactDataSource ds = new ContactDataSource(RemoveInventory.this);
-                    if(!ds.deleteCar(carname.getText().toString())){
-                        Toast.makeText(RemoveInventory.this, "Doesn't Exist", Toast.LENGTH_SHORT).show();
+                   String car=carname.getText().toString();
+                   ds.open();
+                   ds.deleteCar(car);
+                   ds.close();
 
-                        return;
-                    }Toast.makeText(RemoveInventory.this, "Delete Sucessful", Toast.LENGTH_SHORT).show();
+
 
 
 
@@ -50,5 +53,5 @@ public class RemoveInventory extends AppCompatActivity {
                 }
             }
         });
-    }*/
+    }
             }
