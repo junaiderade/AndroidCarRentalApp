@@ -173,8 +173,10 @@ public class ContactDataSource {
     public void deleteCar(String contactId) {
         String sql="Delete from car where carName="+"\""+contactId+"\"";
         database.execSQL(sql);
-
-
+    }
+    public void deleteRes(String carName) {
+        String sql="Delete from reservation where carName="+"\""+carName+"\"";
+        database.execSQL(sql);
     }
 
 }

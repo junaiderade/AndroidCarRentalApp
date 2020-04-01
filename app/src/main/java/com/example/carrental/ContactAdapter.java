@@ -50,6 +50,15 @@ public class ContactAdapter extends ArrayAdapter<Car> {
                     ds.close();
                 }
             });
+            Button b2 = (Button) v.findViewById(R.id.buttonReserveCar2);
+            b2.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+                    ContactDataSource ds = new ContactDataSource(adapterContext);
+                    ds.open();
+                    ds.deleteRes(textCarName.getText().toString());
+                    ds.close();
+                }
+            });
 
 
 
