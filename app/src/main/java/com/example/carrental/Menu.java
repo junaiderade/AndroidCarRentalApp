@@ -19,6 +19,7 @@ public class Menu extends AppCompatActivity {
         setContentView(R.layout.menu);
         viewListings();
         adminPage();
+        viewRes();
 
     }
 
@@ -29,6 +30,17 @@ public class Menu extends AppCompatActivity {
             public void onClick(View v) {
                     Intent menuPage = new Intent(Menu.this, ViewListings.class);
                     startActivity(menuPage);
+            }
+        });
+    }
+
+    public void viewRes(){
+        ImageButton user =(ImageButton) findViewById(R.id.imageButton3);
+        user.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent menuPage = new Intent(Menu.this, ViewRes.class);
+                startActivity(menuPage);
             }
         });
     }

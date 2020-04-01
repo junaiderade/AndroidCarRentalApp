@@ -103,8 +103,11 @@ public class ContactDataSource {
         user.setId(0);
         return didSucced;
     }
-
-
+    public Cursor getReservations(){
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+        Cursor data = db.rawQuery("select * from reservation where username = "+"'"+this.username+"'",null);
+        return data;
+    }
     public boolean insertCar(Car car){
         boolean didSucced = false;
 
