@@ -7,9 +7,12 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
@@ -22,7 +25,7 @@ public class ViewListings  extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.car_listings);
-        ContactDataSource ds = new ContactDataSource(this);
+        final ContactDataSource ds = new ContactDataSource(this);
         try{
             ds.open();
             car = ds.getCar();
@@ -37,12 +40,11 @@ public class ViewListings  extends AppCompatActivity {
         catch(Exception e){
             Toast.makeText(this, "Error retrieving cars", Toast.LENGTH_LONG).show();
         }
+        final TextView tx = (TextView) findViewById(R.id.dates);
         Button menu = (Button) findViewById(R.id.menuButton);
         menu.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intent =new Intent(ViewListings.this,Menu.class);
-                startActivity(intent);
-
+                ds.setDate(tx.getText().toString());
             }
         });
 

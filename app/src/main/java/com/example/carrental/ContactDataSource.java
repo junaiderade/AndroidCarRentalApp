@@ -18,6 +18,7 @@ import java.util.Calendar;
 public class ContactDataSource {
     public static String username = "";
     public static long isAdmin = 1;
+    public static String date = "";
     public SQLiteDatabase database;
     public CarRentalDatabaseHelper dbHelper;
     public ContactDataSource(Context context) {
@@ -29,6 +30,14 @@ public class ContactDataSource {
     public static String getUsername(){
         return username;
     }
+
+    public static void setDate(String s){
+        date = s;
+    }
+    public static String getDate(){
+        return date;
+    }
+
 
     public void open() throws SQLException {
         database = dbHelper.getWritableDatabase();

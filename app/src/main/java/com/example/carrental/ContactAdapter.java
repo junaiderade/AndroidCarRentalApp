@@ -46,7 +46,7 @@ public class ContactAdapter extends ArrayAdapter<Car> {
                 public void onClick(View v) {
                     ContactDataSource ds = new ContactDataSource(adapterContext);
                     ds.open();
-                    ds.insertRes(1,ds.getUsername(),textCarName.getText().toString(),"9/9");
+                    ds.insertRes(1,ds.getUsername(),textCarName.getText().toString(),ds.getDate());
                     ds.close();
                 }
             });

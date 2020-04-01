@@ -29,7 +29,7 @@
             android:layout_alignParentLeft="true"
             android:layout_marginStart="299dp"
             android:layout_marginLeft="299dp"
-            android:text="Main Menu" />
+            android:text="Accept" />
 
         <EditText
             android:id="@+id/dates"
